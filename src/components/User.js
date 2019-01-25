@@ -7,7 +7,7 @@ export class User extends Component {
     prop: PropTypes
   }
 
-  render() {
+  render () {
     return <div />
   }
 }
