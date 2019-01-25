@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header'
+import Header from '../containers/Header'
 import MainContent from '../containers/MainContent'
 
 export default function App () {
