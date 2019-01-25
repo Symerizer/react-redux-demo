@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React from 'react'
 
-export class User extends Component {
-  static propTypes = {
-    prop: PropTypes
+export default function User (props) {
+  const changeUsername = e => {
+    e.preventDefault()
+    props.dispatch({
+      type: 'UPDATE_USERNAME',
+      user: { username: e.target.username.value }
+    })
   }
 
-  render () {
-    return <div />
-  }
+  return (
+    <div id='user'>
+      <p>Name: {props.user.name}</p>
+      <p>Username: {props.user.username}</p>
+      <form onSubmit={changeUsername}>
+        <input type='text' name='username' />
+        <button>Change username</button>
+      </form>
+    </div>
+  )
 }
-
-const mapStateToProps = state => ({})
-
-const mapDispatchToProps = {}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(User)
